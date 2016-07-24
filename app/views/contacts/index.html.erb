@@ -1,0 +1,10 @@
+<% @contacts.each do |contact| %>
+  <div style="border: 1px solid salmon;display: block;">
+    <h2><%= contact.first_name %>, <%= contact.last_name %></h2>
+    <h3><%= contact.job %></h3>
+    <h4><%= contact.city %>, <%= contact.country %></h4>
+    <p>Phone: <%= contact.phone %></p>
+    <p>Email: <%= contact.email %></p>
+    <p>Twitter: <%= contact.twitter_acc %></p>
+  </div>
+<% end %>
