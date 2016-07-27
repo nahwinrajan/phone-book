@@ -1,10 +1,25 @@
-<% @contacts.each do |contact| %>
-  <div style="border: 1px solid salmon;display: block;">
-    <h2><%= contact.first_name %>, <%= contact.last_name %></h2>
-    <h3><%= contact.job %></h3>
-    <h4><%= contact.city %>, <%= contact.country %></h4>
-    <p>Phone: <%= contact.phone %></p>
-    <p>Email: <%= contact.email %></p>
-    <p>Twitter: <%= contact.twitter_acc %></p>
+<div class="container">
+  <div class="row" id="content-wrapper">
+    <div class="col-md-12">
+      <% @contacts.each do |contact| %>
+        <div class="info-card" data-name="<%= contact.first_name + ' ' + contact.last_name%>" data-job="<%=contact.job%>" data-location="<%= contact.city + ', ' + contact.country%>">
+          <div class="personal-detail-section">
+            <img src="http://lorempixel.com/200/200/people/<%= Random.rand(10) %>" alt="<%=contact.first_name + ' ' + contact.last_name%> picture">
+            <div class="text-detail">
+              <h2><%= contact.first_name + ' ' + contact.last_name %></h2>
+              <h5><%= contact.job %></h5>
+              <p><%= contact.city + ', ' + contact.country %></p>
+            </div>
+          </div>
+          <div class="contact-detail-section">
+            <ul>
+              <li> <i class="fa fa-envelope-o" ></i><p><%=contact.email%></p></li>
+              <li><i class="fa fa-phone"></i><p><%=contact.phone%></p></li>
+              <li><i class="fa fa-twitter" ></i><p><%=contact.twitter_acc%></p></li>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>

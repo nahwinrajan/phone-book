@@ -1,0 +1,232 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require font-awesome
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// variables
+$theme-dark-color: #31A66C;
+$theme-light-color: #fff;
+$theme-main-color: #31a66c;
+
+body {
+  font-family: "Roboto", "Open Sans", "Ubuntu", "Helvetica Neue", sans-serif;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #5f5f5f;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hide {
+  display: none;
+}
+
+.col-md-12 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.title-app {
+  font-family: "Pacifio", cursive;
+  text-align: center;
+  vertical-align: middle;
+  color: $theme-main-color;
+  font-size: 32px;
+  padding-top: 3px;
+}
+
+/* miscellaneous */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  width: 100vw;
+  background: $theme-light-color;
+  font-family: "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
+  border-top: 1px solid $theme-main-color;
+  color: $theme-main-color;
+  text-align: center;
+
+  p {
+    padding: 15px 0;
+    font-family: cursive;
+  }
+}
+
+header {
+  width: 100vw;
+  height: 60px;
+  position: fix;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  background-color: none;
+  border-bottom: 1px solid $theme-main-color;
+  background-color: $theme-light-color;
+  opacity: .8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .search-container {
+    position: relative;
+    color: #aaa;
+    font-size: 16px;
+    input {
+      width: 250px;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+      box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+      text-indent: 32px;
+      font-size: 14px;
+      color: #212121;
+    }
+    input:focus {
+      outline: 2px solid $theme-main-color;
+      border-radius: 5px;
+      box-shadow: 0px 0px 8px $theme-main-color;
+    }
+    i.fa {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: #aaa;
+    }
+  }
+  .menu-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: middle;
+  }
+}
+
+.info-card {
+  width: 350px;
+  height: 200px;
+  border: 1px solid $theme-light-color;
+  margin: 10px;
+  font-weight: bold;
+  background-color: $theme-main-color;
+
+  border-radius: 4px;
+  box-shadow: 0px 5px 15px rgba(0,0,0, .3);
+
+  tranisition:display 300ms ease-in;
+
+  .personal-detail-section {
+    width: 100%;
+    height: 130px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: row;
+
+    color: $theme-light-color;
+
+    img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 1px solid $theme-light-color;
+      margin-right: 20px;
+    }
+
+    .text-detail {
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+        font-size: 20px;
+        width: 180px;
+        // margin-bottom: 10px;
+      }
+      h3 {
+        font-size: 16px;
+        // line-height: 18px;
+        width: 180px;
+        overflow: hidden;
+        text-overflow: clip;
+        white-space: nowrap;
+        // margin-bottom: 10px;
+        font-weight: normal;
+        font-style: italic;
+      }
+      p {
+        font-size: 12px;
+        font-weight: normal;
+        width: 160px;
+        overflow: hidden;
+        text-overflow: clip;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .contact-detail-section {
+    color: $theme-light-color;
+    font-size: 16px;
+    font-weight: normal;
+    border-top: solid 1px white;
+    ul {
+      list-style-type: none;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style-type: none;
+        display: inline-block;
+        float: left;
+        width: 115px;
+        height: 68px;
+        border-right: solid 1px white;
+        text-align: center;
+        padding: 2px;
+
+        &:last-child{
+          border-right: none;
+        }
+
+        i.fa{
+          display: block;
+          margin-top: 10px;
+          font-size: 20px;
+        }
+        p {
+          font-size: 12px;
+          word-wrap: break-word;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}
+
