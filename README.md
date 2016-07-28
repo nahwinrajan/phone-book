@@ -9,6 +9,9 @@ search result instantly (minimum 2 character before the filter start working)
 
 ## Not finished yet
 #### to Do:
-1. Add the Add Feature
-2. Add Edit Feature
-3. Add Delete Feature
+- merge to master after bug fix
+
+#### Bug Fix:
+- slow initial load
+- create/update delete action
+- delete button on edit form only
