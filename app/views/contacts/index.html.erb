@@ -1,7 +1,8 @@
-<div class="container">
+<div class="container" style="margin-bottom: 45px;">
   <div class="row" id="content-wrapper">
     <div class="col-md-12">
       <% @contacts.each do |contact| %>
+      <%= link_to edit_contact_path(contact) do %>
         <div class="info-card" data-name="<%= contact.first_name + ' ' + contact.last_name%>" data-job="<%=contact.job%>" data-location="<%= contact.city + ', ' + contact.country%>">
           <div class="personal-detail-section">
             <img src="http://lorempixel.com/200/200/people/<%= Random.rand(10) %>" alt="<%=contact.first_name + ' ' + contact.last_name%> picture">
@@ -19,6 +20,7 @@
             </ul>
           </div>
         </div>
+      <% end %>
       <% end %>
     </div>
   </div>

@@ -5,11 +5,11 @@
             <i class="fa fa-search"></i>
         </div>
         <div class="title-app">
-            Phone-Book
+            <%= link_to("Phone-Book", root_path) %>
         </div>
   <div class="menu-container">
-    <a href="#" id="add-contact-button" class="btn btn-success btn-md">
-      <i class="fa fa-plus fa-2x"></i>
-    </a>
+  <a href="<%= new_contact_path %>" class="btn btn-success">
+    <i class='fa fa-plus fa-2x'></i>
+  </a>
   </div>
 </header>

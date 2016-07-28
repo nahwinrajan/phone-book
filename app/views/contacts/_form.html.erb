@@ -1,0 +1,105 @@
+<form role="form" id="contactForm">
+    <%= form_for @contact do |f| %>
+    <!-- error message -->
+    <% if @contact.errors.any? %>
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+        </div>
+        <div class="panel-body">
+          <ul class="list-group">
+            <% @contact.errors.each do |messaga| %>
+            <li class="list-group-item text-danger"><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+    <!-- first name -->
+    <div class="form-group">
+    <%= f.label :first_name %>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i> </span>
+        <%= f.text_field :first_name, class:"form-control", placeholder:"enter first name" %>
+      </div>
+    </div>
+    <!-- last name -->
+    <div class="form-group">
+    <%= f.label :last_name %>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i> </span>
+        <%= f.text_field :last_name, class:"form-control", placeholder:"enter last name" %>
+      </div>
+    </div>
+    <!-- job title -->
+    <div class="form-group">
+    <%= f.label :job %>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i> </span>
+        <%= f.text_field :job, class:"form-control", placeholder:"enter job title" %>
+      </div>
+    </div>
+    <!-- phone -->
+    <div class="form-group">
+    <%= f.label :phone %>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i> </span>
+        <%= f.text_field :phone, class:"form-control", placeholder:"enter phone number" %>
+      </div>
+    </div>
+    <!-- email -->
+    <div class="form-group">
+    <%= f.label :email %>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-envelope-o"></i> </span>
+        <%= f.text_field :email, class:"form-control", placeholder:"enter email address" %>
+      </div>
+    </div>
+    <!-- twitter -->
+    <div class="form-group">
+    <%= f.label :twitter_acc %>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-twitter-square"></i> </span>
+        <%= f.text_field :twitter_acc, class:"form-control", placeholder:"enter twitter username" %>
+      </div>
+    </div>
+    <!-- address line 1 -->
+    <div class="form-group">
+    <%= f.label :address_line1 %>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-road"></i> </span>
+        <%= f.text_field :address_line1, class:"form-control", placeholder:"enter street name" %>
+      </div>
+    </div>
+    <!-- address line 2 -->
+    <div class="form-group">
+    <%= f.label :address_line2 %>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-building"></i> </span>
+        <%= f.text_field :address_line2, class:"form-control", placeholder:"enter street name" %>
+      </div>
+    </div>
+    <!-- city -->
+    <div class="form-group">
+    <%= f.label :city %>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-home"></i> </span>
+        <%= f.text_field :city, class:"form-control", placeholder: "enter city name" %>
+      </div>
+    </div>
+    <!-- country -->
+    <div class="form-group">
+    <%= f.label :country %>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-globe"></i> </span>
+        <%= f.text_field :country, class:"form-control", placeholder: "enter country name" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <a href="<%= root_path  %>" class="btn btn-warning btn-lg">Cancel</a>
+      <%= yield(:delete_button) %>
+      <%= f.submit "Save", :class => "btn btn-success btn-lg" %>
+    </div>
+    <% end %>
+</form>
+
