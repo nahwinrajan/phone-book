@@ -9,9 +9,8 @@ search result instantly (minimum 2 character before the filter start working)
 
 ## Not finished yet
 #### to Do:
-- merge to master after bug fix
+- implement delete by ajax (the structure is ready just need to be triggered by ajax)
 
 #### Bug Fix:
 - slow initial load
-- create/update delete action
 - delete button on edit form only
