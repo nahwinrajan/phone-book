@@ -13,4 +13,3 @@ search result instantly (minimum 2 character before the filter start working)
 
 #### Bug Fix:
 - slow initial load
-- delete button on edit form only
