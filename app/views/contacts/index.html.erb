@@ -2,7 +2,7 @@
   <div class="row" id="content-wrapper">
     <div class="col-md-12">
       <% @contacts.each do |contact| %>
-      <%= link_to edit_contact_path(contact) do %>
+      <%= link_to edit_contact_path(contact), class: 'no-text-decor' do %>
         <div class="info-card" data-name="<%= contact.first_name + ' ' + contact.last_name%>" data-job="<%=contact.job%>" data-location="<%= contact.city + ', ' + contact.country%>">
           <div class="personal-detail-section">
             <img src="http://lorempixel.com/200/200/people/<%= Random.rand(10) %>" alt="<%=contact.first_name + ' ' + contact.last_name%> picture">

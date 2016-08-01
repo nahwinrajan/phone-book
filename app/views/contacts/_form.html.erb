@@ -1,4 +1,3 @@
-<form role="form" id="contactForm">
     <%= form_for @contact do |f| %>
     <!-- error message -->
     <% if @contact.errors.any? %>
@@ -97,9 +96,6 @@
     </div>
     <div class="form-group">
       <a href="<%= root_path  %>" class="btn btn-warning btn-lg">Cancel</a>
-      <%= yield(:delete_button) %>
       <%= f.submit "Save", :class => "btn btn-success btn-lg" %>
     </div>
     <% end %>
-</form>
-
